@@ -1,8 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:superellipse_shape/superellipse_shape.dart';
+
+import '../widget/menu_item_button.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -21,6 +19,7 @@ class MenuPage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Color.fromARGB(255, 86, 107, 244),
         // appBar: AppBar(
         //   title: const Text('Menu Page'),
         // ),
@@ -74,74 +73,42 @@ class MenuPage extends StatelessWidget {
                       Expanded(
                         child: Row(
                           children: [
-                            Expanded(
-                                child: Container(
-                              color: Colors.red,
-                              child: LayoutBuilder(builder: (context, cons) {
-                                final length =
-                                    min(cons.maxHeight, cons.maxWidth);
-                                return Center(
-                                  child: Container(
-                                    height: length,
-                                    width: length,
-                                    margin: const EdgeInsets.all(10),
-                                    // color: Colors.blue,
-                                    child: Stack(
-                                      clipBehavior: Clip.none,
-                                      children: [
-                                        Positioned.fill(
-                                          child: Card(
-                                            shape: SuperellipseShape(
-                                             borderRadius:
-                                                  BorderRadius.circular(28.0),
-                                            ),
-                                          ),
-                                        ),
-                                        Positioned(
-                                          top: -10,
-                                          left: 0,
-                                          right: 0,
-                                          child: AspectRatio(
-                                            aspectRatio: 1,
-                                            child: SvgPicture.asset(
-                                              "assets/icons/math.svg",
-                                            
-                                              semanticsLabel: 'icon',
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              }),
-                            )),
-                            Expanded(
-                                child: Container(
-                              color: Colors.green,
-                            )),
+                            MenuButton(
+                              assetsImagePath: "assets/icons/b.svg",
+                              labelText: item[0],
+                            ),
+                            MenuButton(
+                              assetsImagePath: "assets/icons/a.svg",
+                              labelText: item[1],
+                            ),
                           ],
                         ),
                       ),
                       Expanded(
                         child: Row(
                           children: [
-                            Expanded(
-                                child: Container(
-                              color: Colors.yellow,
-                            )),
-                            Expanded(child: Container(color: Colors.blue)),
+                            MenuButton(
+                              assetsImagePath: "assets/icons/c.svg",
+                              labelText: item[2],
+                            ),
+                            MenuButton(
+                              assetsImagePath: "assets/icons/c.svg",
+                              labelText: item[3],
+                            ),
                           ],
                         ),
                       ),
                       Expanded(
                         child: Row(
                           children: [
-                            Expanded(
-                                child: Container(
-                              color: Colors.red,
-                            )),
-                            Expanded(child: Container(color: Colors.green)),
+                            MenuButton(
+                              assetsImagePath: "assets/icons/c.svg",
+                              labelText: item[4],
+                            ),
+                            MenuButton(
+                              assetsImagePath: "assets/icons/c.svg",
+                              labelText: item[5],
+                            ),
                           ],
                         ),
                       ),
@@ -151,26 +118,6 @@ class MenuPage extends StatelessWidget {
                   return Container();
                 }
               }),
-
-              // GridView.builder(
-              //   // Suggested code may be subject to a license. Learn more: ~LicenseLog:3326103951.
-              //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              //     crossAxisCount: 2,
-              //     crossAxisSpacing: 10,
-              //     mainAxisSpacing: 10,
-              //   ),
-              //   padding: const EdgeInsets.symmetric(horizontal: 10),
-
-              //   itemCount: item.length,
-              //   itemBuilder: (BuildContext context, int index) {
-              //     return Container(
-              //       color: Colors.grey,
-              //       child: Center(
-              //         child: Text(item[index]),
-              //       ),
-              //     );
-              //   },
-              // ),
             ),
           ],
         ),
