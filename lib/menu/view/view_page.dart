@@ -87,22 +87,27 @@ class MenuPage extends StatelessWidget {
                                     margin: const EdgeInsets.all(10),
                                     // color: Colors.blue,
                                     child: Stack(
+                                      clipBehavior: Clip.none,
                                       children: [
                                         Positioned.fill(
                                           child: Card(
                                             shape: SuperellipseShape(
-                                              borderRadius:
-                                                 BorderRadius.circular(28.0),
+                                             borderRadius:
+                                                  BorderRadius.circular(28.0),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                        //  top: -10,
-                                          // left: 0,
-                                          // right: 0,
-                                          child: SvgPicture.asset(
-                                            "assets/icons/math.svg",
-                                            semanticsLabel: 'icon',
+                                          top: -10,
+                                          left: 0,
+                                          right: 0,
+                                          child: AspectRatio(
+                                            aspectRatio: 1,
+                                            child: SvgPicture.asset(
+                                              "assets/icons/math.svg",
+                                            
+                                              semanticsLabel: 'icon',
+                                            ),
                                           ),
                                         ),
                                       ],
